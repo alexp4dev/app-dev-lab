@@ -19,13 +19,14 @@ spec:
         - resources: {}
           terminationMessagePath: /dev/termination-log
           name: hello-world
+          image: 'quay.io/alexpermut/app-dev-lab:v2'
           ports:
             - containerPort: 8080
               protocol: TCP
           imagePullPolicy: IfNotPresent
-# update with the image you build in part 1
+          # update with the image you build in part 1
           image: 'quay.io/alexpermut/app-dev-lab:v1'
-      restartPolicy: Always
+        restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
     type: RollingUpdate
