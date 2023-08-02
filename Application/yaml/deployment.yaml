@@ -19,7 +19,6 @@ spec:
         - resources: {}
           terminationMessagePath: /dev/termination-log
           name: hello-world
-         
           ports:
             - containerPort: 8080
               protocol: TCP
