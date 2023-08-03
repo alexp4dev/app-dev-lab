@@ -2,18 +2,20 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
 # set your lab user name
-  name: {{ .Release.Name }}
+  name: {{ .Release.Name }}-2
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
 spec:
   replicas: {{ .Values.ReplicaNumber }}
   selector:
     matchLabels:
 # set your lab user name
-      app: {{ .Release.Name }}
+      app2: {{ .Release.Name }}-2
   template:
     metadata:
       labels:
 # set your lab user name
-        app: {{ .Release.Name }}
+        app2: {{ .Release.Name }}-2
     spec:
       volumes:
         - name: index-html
