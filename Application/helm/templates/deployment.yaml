@@ -22,8 +22,8 @@ spec:
             defaultMode: 420
       containers:
           volumeMounts:
-            - name: index-html
-              mountPath: /tmp/html # this will mount the html.index file to it application location
+          - name: index-html
+            mountPath: /tmp/html # this will mount the html.index file to it application location
         - resources: {}
           terminationMessagePath: /dev/termination-log
           name: {{ .Release.Name }}
