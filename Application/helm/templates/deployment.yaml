@@ -14,8 +14,13 @@ spec:
       labels:
 # set your lab user name
         app: {{ .Release.Name }}
-spec:
+    spec:
       containers:
+       volumes:
+        - name: index-html
+          configMap:
+            name: index.html
+            defaultMode: 420
         - resources: {}
           terminationMessagePath: /dev/termination-log
           name: {{ .Release.Name }}
@@ -33,6 +38,3 @@ spec:
       maxUnavailable: 25%
       maxSurge: 25%
   revisionHistoryLimit: 10
-    #this will Create Volume From our ConfigMap
-
-      
