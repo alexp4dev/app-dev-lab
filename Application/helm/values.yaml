@@ -1,4 +1,4 @@
-ReplicaNumber: 1
+ReplicaNumber: 2
 
 containers:
   containerPort: 8080
@@ -7,3 +7,5 @@ containers:
 
 service:
   servicePort: 8080
+
+test: Healthy
